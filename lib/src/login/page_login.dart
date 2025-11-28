@@ -64,7 +64,7 @@ Widget _imageBanner() {
     ),
 
     child: const Image(
-      image: AssetImage("assets/icons/login.png"),
+      image: AssetImage("assets/icons/logo.png"),
       height: 50,
     )
   );

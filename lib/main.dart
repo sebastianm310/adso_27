@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'src/login/page_login.dart';
+import 'src/register/page_register.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -8,12 +9,12 @@ class _MyAppState extends State <MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: 'login',
+      initialRoute: 'register',
       routes: {
-        "login": (context) => const LoginPage(),
+        "register": (context) => const RegisterPage(),
       },
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+        //colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
       ),
       title: "Delivery App",
     );
