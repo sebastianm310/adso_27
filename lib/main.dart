@@ -9,9 +9,10 @@ class _MyAppState extends State <MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: 'register',
+      initialRoute: 'login',
       routes: {
         "register": (context) => const RegisterPage(),
+        "login" : (context) => const LoginPage(),
       },
       theme: ThemeData(
         //colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'button_register.dart';
+import '../utils/my_colors.dart';
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
 
@@ -14,11 +15,12 @@ class _RegisterPageState extends State<RegisterPage> {
     return Scaffold(
       body: Container(
         width: double.infinity,
+        color: MyColors.blanco,
         child: Stack(
           children: [
             Positioned(left: -80, top: -60, child: _circleRegister()),
             Positioned(left: 20, top: 60, child: _textRegister()),
-            Positioned(left: 10, top: 30, child: _iconBack()),
+            Positioned(left: 10, top: 30, child: _iconBack(context)),
             Container(
               margin: EdgeInsets.only(top:150),
               width: double.infinity,
@@ -26,13 +28,13 @@ class _RegisterPageState extends State<RegisterPage> {
                 children: [
                   _imageUser(),
                   _textFieldEmail(),
-                  _crearBasico("Name"),
+                  _textFieldFirstName(),
                   _textFieldLastName(),
                   _textFieldPhone(),
                   _textFieldPassword(),
                   _textFieldConfirmPassword(),
                   ButtonRegister(),
-                  _rowTextAlreadyHaveAccount(),
+                  _rowTextAlreadyHaveAccount(context),
                 ],
               ),
             ),
@@ -47,7 +49,7 @@ Widget _circleRegister() {
   return Container(
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(100),
-      color: Color(0xFF870027)
+      color: MyColors.rojoPrimario,
     ),
     height: 230,
     width: 240,
@@ -60,16 +62,18 @@ Widget _textRegister() {
       //color: Colors.white,
       fontSize: 30,
       fontWeight: FontWeight.bold,
-      color: Colors.white,
+      color: MyColors.blanco,
     ),
   );
 }
-Widget _iconBack() {
+Widget _iconBack(BuildContext context) {
   return IconButton(
-    onPressed: () {},
+    onPressed: () {
+      Navigator.pop(context);
+    },
     icon: const Icon(
       Icons.arrow_back,
-      color: Colors.white,
+      color: MyColors.blanco,
     ),
   );
 }
@@ -86,29 +90,10 @@ Widget _imageUser() {
   );
 }
 
-Widget _crearBasico(var texto) {
-  return Container(
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(30),
-      
-    ),
-    margin:const EdgeInsets.symmetric(
-      horizontal: 40,
-      vertical: 10,
-    ),
-    child: TextField(
-      decoration: InputDecoration(
-        hintText: texto,
-        prefixIcon: texto=='Email'? Icon(Icons.email):Icon(Icons.person),
-      ),
-    ),
-  );
-}
 Widget _textFieldEmail() {
   return Container(
     decoration: BoxDecoration(
-      color: Colors.white,
+      color: MyColors.blanco,
       borderRadius: BorderRadius.circular(30),
       
     ),
@@ -127,7 +112,7 @@ Widget _textFieldEmail() {
 Widget _textFieldFirstName() {
   return Container(
     decoration: BoxDecoration(
-      color: Colors.white,
+      color: MyColors.blanco,
       borderRadius: BorderRadius.circular(30),
       
     ),
@@ -146,7 +131,7 @@ Widget _textFieldFirstName() {
 Widget _textFieldLastName() {
   return Container(
     decoration: BoxDecoration(
-      color: Colors.white,
+      color: MyColors.blanco,
       borderRadius: BorderRadius.circular(30),
       
     ),
@@ -165,7 +150,7 @@ Widget _textFieldLastName() {
 Widget _textFieldPhone() {
   return Container(
     decoration: BoxDecoration(
-      color: Colors.white,
+      color: MyColors.blanco,
       borderRadius: BorderRadius.circular(30),
       
     ),
@@ -189,7 +174,7 @@ Widget _textFieldPhone() {
 Widget _textFieldPassword() {
   return Container(
     decoration: BoxDecoration(
-      color: Colors.white,
+      color: MyColors.blanco,
       borderRadius: BorderRadius.circular(30),
       
     ),
@@ -209,7 +194,7 @@ Widget _textFieldPassword() {
 Widget _textFieldConfirmPassword() {
   return Container(
     decoration: BoxDecoration(
-      color: Colors.white,
+      color: MyColors.blanco,
       borderRadius: BorderRadius.circular(30),
       
     ),
@@ -227,14 +212,16 @@ Widget _textFieldConfirmPassword() {
   );
 }
 
-Widget _rowTextAlreadyHaveAccount() {
+Widget _rowTextAlreadyHaveAccount(BuildContext context) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       const Text("Already have account?"),
       SizedBox(width: 15),
       TextButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, 'login');
+        },
         child: const Text("Sign in"),
       ),
     ],

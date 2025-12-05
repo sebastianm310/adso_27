@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import '../utils/my_colors.dart';
 class ButtonRegister extends StatefulWidget {
   const ButtonRegister({super.key});
 
@@ -19,7 +19,7 @@ class _ButtonRegisterState extends State<ButtonRegister> {
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
           padding: const EdgeInsets.symmetric(vertical: 15),
-          backgroundColor: Color(0xFF870027),
+          backgroundColor: MyColors.rojoPrimario,
 
         ),
         child: const Text("Registry", style: TextStyle(fontSize: 18, color: Colors.white)),
