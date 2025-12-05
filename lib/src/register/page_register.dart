@@ -105,6 +105,9 @@ Widget _textFieldEmail() {
       decoration: InputDecoration(
         hintText: 'Email',
         prefixIcon: Icon(Icons.email),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: MyColors.granate, width: 2.0),
+        )
       ),
     ),
   );
@@ -124,6 +127,9 @@ Widget _textFieldFirstName() {
       decoration: InputDecoration(
         hintText: 'First Name',
         prefixIcon: Icon(Icons.person),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: MyColors.granate, width: 2.0),
+        )
       ),
     ),
   );
@@ -143,6 +149,9 @@ Widget _textFieldLastName() {
       decoration: InputDecoration(
         hintText: 'Last Name',
         prefixIcon: Icon(Icons.person),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: MyColors.granate, width: 2.0),
+        )
       ),
     ),
   );
@@ -162,6 +171,9 @@ Widget _textFieldPhone() {
       decoration: InputDecoration(
         hintText: 'Phone',
         prefixIcon: Icon(Icons.phone),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: MyColors.granate, width: 2.0),
+        )
       ),
       keyboardType: TextInputType.number,
       inputFormatters: <TextInputFormatter>[
@@ -186,6 +198,9 @@ Widget _textFieldPassword() {
       decoration: InputDecoration(
         hintText: 'Password',
         prefixIcon: Icon(Icons.password),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: MyColors.granate, width: 2.0),
+        )
       ),
       obscureText: true,
     ),
@@ -206,6 +221,9 @@ Widget _textFieldConfirmPassword() {
       decoration: InputDecoration(
         hintText: 'Confirm Password',
         prefixIcon: Icon(Icons.password),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: MyColors.granate, width: 2.0),
+        )
       ),
       obscureText: true,
     ),
