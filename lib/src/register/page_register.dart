@@ -13,6 +13,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       body: Container(
         width: double.infinity,
         color: MyColors.blanco,
@@ -24,19 +25,22 @@ class _RegisterPageState extends State<RegisterPage> {
             Container(
               margin: EdgeInsets.only(top:150),
               width: double.infinity,
-              child:Column(
-                children: [
-                  _imageUser(),
-                  _textFieldEmail(),
-                  _textFieldFirstName(),
-                  _textFieldLastName(),
-                  _textFieldPhone(),
-                  _textFieldPassword(),
-                  _textFieldConfirmPassword(),
-                  ButtonRegister(),
-                  _rowTextAlreadyHaveAccount(context),
-                ],
-              ),
+              child:SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
+                child: Column(
+                  children: [
+                    _imageUser(),
+                    _textFieldEmail(),
+                    _textFieldFirstName(),
+                    _textFieldLastName(),
+                    _textFieldPhone(),
+                    _textFieldPassword(),
+                    _textFieldConfirmPassword(),
+                    ButtonRegister(),
+                    _rowTextAlreadyHaveAccount(context),
+                  ],
+                ),
+              )
             ),
           ],
         ),
